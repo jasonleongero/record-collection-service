@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+      
+  <context:component-scan base-package="org.jasongero"></context:component-scan>
+  
+  <bean id="dataSource" 
+    class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+    p:driverClassName="com.mysql.jdbc.Driver"
+    p:url="jdbc:mysql://localhost:3306/record_collection_database?serverTimezone=UTC"
+    p:username="jason"
+    p:password=""
+  />
+  
+  <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+    <constructor-arg ref="dataSource" />
+  </bean>
+  
+  <bean id="mapper" class="org.dozer.DozerBeanMapper">
+    <property name="mappingFiles">
+      <list>
+        <value>org/jasongero/recordcollectionservice/dozermappings/Artist-ArtistDto.xml</value>
+        <value>org/jasongero/recordcollectionservice/dozermappings/MasterRelease-MasterReleaseDto.xml</value> 
+        <value>org/jasongero/recordcollectionservice/dozermappings/Release-ReleaseDto.xml</value>
+        <value>org/jasongero/recordcollectionservice/dozermappings/Release-ReleaseDetailDto.xml</value>
+        <value>org/jasongero/recordcollectionservice/dozermappings/ReleaseWithArtist-ReleaseWithArtistDto.xml</value> 
+      </list>
+    </property>
+  </bean>
+</beans>

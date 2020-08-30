@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+  <mapping> 
+    <class-a>org.jasongero.recordcollectionservice.entity.Release</class-a>
+    <class-b>org.jasongero.recordcollectionservice.dto.ReleaseDto</class-b>   
+    <field>
+      <a>releaseId</a>
+      <b is-accessible="true">releaseId</b>
+    </field>
+    <field>
+      <a>title</a>
+      <b is-accessible="true">title</b>
+    </field>
+    <field>
+      <a>catalogNumber</a>
+      <b is-accessible="true">catalogNumber</b>
+    </field>
+    <field>
+      <a>releaseYear</a>
+      <b is-accessible="true">releaseYear</b>
+    </field>
+    <field>
+      <a get-method="fetchFormats">formats</a>
+      <b is-accessible="true">formats</b>
+    </field>
+    <field>
+      <a>primaryImageUrl</a>
+      <b is-accessible="true">imageUrl</b>
+    </field>
+  </mapping>
+  
+  <mapping>
+    <class-a>org.jasongero.recordcollectionservice.entity.Format</class-a>
+    <class-b>org.jasongero.recordcollectionservice.dto.ReleaseDto.FormatDto</class-b>   
+    <field>
+      <a>formatName</a>
+      <b is-accessible="true">formatName</b>
+    </field>
+    <field>
+      <a>quantity</a>
+      <b is-accessible="true">quantity</b>
+    </field>
+    <field>
+      <a>notes</a>
+      <b is-accessible="true">notes</b>
+    </field>
+  </mapping>
+</mappings> 

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+  <mapping>
+    <class-a>org.jasongero.recordcollectionservice.entity.MasterRelease</class-a>
+    <class-b>org.jasongero.recordcollectionservice.dto.MasterReleaseDto</class-b>
+    <field>
+      <a>masterReleaseId</a>
+      <b is-accessible="true">masterReleaseId</b>
+    </field>
+    <field>
+      <a>title</a>
+      <b is-accessible="true">title</b>
+    </field>
+    <field>
+      <a>imageUrl</a>
+      <b is-accessible="true">imageUrl</b>
+    </field>
+    <field>
+      <a>releaseVersions</a>
+      <b is-accessible="true">releaseVersions</b>
+    </field>
+  </mapping>
+</mappings> 
